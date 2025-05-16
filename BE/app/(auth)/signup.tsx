@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'expo-router';
 
-export default function signup() {
+export default function Signup() {
   const { signUp } = useAuth();
   const router = useRouter();
   const [email, setEmail] = useState('');
@@ -12,15 +12,14 @@ export default function signup() {
   const handleSignUp = async () => {
     console.log('Trying to sign up:', email);
     try {
-        await signUp(email, password);
-        console.log('Sign up success!');
-        router.replace('/explore');
+      await signUp(email, password);
+      console.log('Sign up success!');
+      router.replace('/explore');
     } catch (error: any) {
-        console.error('Signup error:', error.message);
-        Alert.alert('Signup Error', error.message);
+      console.error('Signup error:', error.message);
+      Alert.alert('Signup Error', error.message);
     }
   };
-
 
   return (
     <View style={styles.container}>

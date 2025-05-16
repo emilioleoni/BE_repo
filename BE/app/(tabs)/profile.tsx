@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { useAuth } from '@/context/AuthContext';
 
-export default function profile() {
+export default function Profile() {
   const { logout } = useAuth();
 
   return (

@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'expo-router';
 
-export default function login() {
+export default function Login() {
   const { login } = useAuth();
   const router = useRouter();
   const [email, setEmail] = useState('');

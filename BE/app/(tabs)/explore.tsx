@@ -7,7 +7,7 @@ export default function Explore() {
   return (
     <View style={styles.screen}>
       <View style={styles.headerWrapper}>
-        <Text style={styles.header}>Home</Text>
+        <Text style={styles.header}>Explore</Text>
       </View>
       <ScrollView contentContainerStyle={styles.scroll}>
         {categories.map((cat) => (
@@ -24,7 +24,7 @@ export default function Explore() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: 'linear-gradient(180deg, #FFA726 0%, #FFCC80 100%)', // optional, use image bg or gradient lib
+    backgroundColor: '#FFA726', // naranja sólido por ahora
   },
   headerWrapper: {
     paddingTop: 60,

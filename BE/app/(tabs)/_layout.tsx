@@ -1,6 +1,5 @@
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { View } from 'react-native';
 
 export default function TabLayout() {
   return (
@@ -22,7 +21,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="explore"
         options={{
-          tabBarIcon: ({ color, size }) => (
+          title: 'Explore',
+          tabBarIcon: ({ color }) => (
             <Ionicons name="home-outline" size={26} color={color} />
           ),
         }}
@@ -30,7 +30,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="profile"
         options={{
-          tabBarIcon: ({ color, size }) => (
+          title: 'Profile',
+          tabBarIcon: ({ color }) => (
             <Ionicons name="person-outline" size={26} color={color} />
           ),
         }}

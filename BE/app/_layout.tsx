@@ -1,17 +1,16 @@
 import { Slot, useRouter } from 'expo-router';
 import { useEffect } from 'react';
-import { AuthProvider, useAuth } from '../context/AuthContext';
-import { FavoritesProvider } from '../context/FavoritesContext';
+import { AuthProvider, useAuth } from '@/context/AuthContext';
+import { FavoritesProvider } from '@/context/FavoritesContext';
 import { View, ActivityIndicator } from 'react-native';
 
-// Layout con lógica condicional de rutas según el usuario logueado
 function ProtectedLayout() {
   const { user, isLoading } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
     if (!isLoading && !user) {
-      router.replace('/login'); // redirige si no hay usuario
+      router.replace('/login');
     }
   }, [user, isLoading]);
 
@@ -23,7 +22,7 @@ function ProtectedLayout() {
     );
   }
 
-  return <Slot />; // Renderiza la ruta correspondiente
+  return <Slot />;
 }
 
 export default function RootLayout() {
